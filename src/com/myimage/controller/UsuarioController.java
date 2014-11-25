@@ -7,14 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
+import com.myimage.dao.UsuarioDao;
+import com.myimage.dao.utils.DAOFactory;
 import com.myimage.model.Usuario;
  
 @WebServlet("/UsuarioController")
 public class UsuarioController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
+    private UsuarioDao usuarioDao;
+     
     public UsuarioController() {
         super();
+        
     }
  
     private void processarRequisicao(HttpServletRequest request,
@@ -35,11 +40,12 @@ public class UsuarioController extends HttpServlet {
         String email = request.getParameter("email");
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
- 
+        usuarioDao = DAOFactory.createUsuario();
         Usuario usuario = new Usuario();
         usuario.setEmail(email);
         usuario.setNome(nome);
         usuario.setSenha(senha);
+        usuarioDao.save(usuario);
     }
  
     protected void doGet(HttpServletRequest request,
@@ -51,4 +57,5 @@ public class UsuarioController extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         processarRequisicao(request, response);
     }
+ 
 }
