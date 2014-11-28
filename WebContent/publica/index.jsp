@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UNEBImage.com</title>
+<title>NewImage.com</title>
  
  <link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap.min.css" />
  <link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />

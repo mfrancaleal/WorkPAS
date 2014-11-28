@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
  
 import org.hibernate.SessionFactory;
  
-public class ConectionFilter implements Filter{
+public class ConectionFilter implements Filter {
  
     private SessionFactory sessionFactory;
  

@@ -2,7 +2,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>WorkPAS</display-name>
   <welcome-file-list>
-  
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -20,12 +19,10 @@
         <filter-name>conectionFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
     <resource-ref>
         <description>DataSource MyImage</description>
         <res-ref-name>jdbc/myimage</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
-    
 </web-app>
