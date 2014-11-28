@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
-import com.myimage.dao.UsuarioDao;
+import com.myimage.dao.ImagemDao;
 import com.myimage.dao.utils.DAOFactory;
-import com.myimage.model.Usuario;
+import com.myimage.model.Imagem;
  
-@WebServlet("/UsuarioController")
-public class UsuarioController extends HttpServlet {
+@WebServlet("/ImagemController")
+public class imagemController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
-    private UsuarioDao usuarioDao;
+    //private UsuarioDao usuarioDao;
      
-    public UsuarioController() {
+    public imagemController() {
         super();
         
     }
@@ -40,12 +40,12 @@ public class UsuarioController extends HttpServlet {
         String email = request.getParameter("email");
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
-        usuarioDao = DAOFactory.createUsuario();
-        Usuario usuario = new Usuario();
-        usuario.setEmail(email);
-        usuario.setNome(nome);
-        usuario.setSenha(senha);
-        usuarioDao.save(usuario);
+      //  usuarioDao = DAOFactory.createUsuario();
+        Imagem imagem = new Imagem();
+        imagem.setEmail(email);
+        imagem.setNome(nome);
+        imagem.setSenha(senha);
+     //   usuarioDao.save(usuario);
     }
  
     protected void doGet(HttpServletRequest request,
