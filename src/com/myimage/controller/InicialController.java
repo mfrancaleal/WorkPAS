@@ -22,9 +22,13 @@ public class InicialController extends HttpServlet {
         String action = request.getParameter("action");
  
         if (action == null) {
-            throw new ServletException("No action specified.");
-        } else if (action.equals("iniciar_criar_conta")) {
+            throw new ServletException("Sem ação.");
+        } else if (action.equals("novo")) {
             irParaIniciarCriarConta(request, response);
+        }else if(action.equals("index")){
+        	irParaPaginaInicial(request, response);
+        }else if(action.equals("upload")){
+        	irParaUploadImage(request, response);
         }
     }
  
@@ -32,6 +36,30 @@ public class InicialController extends HttpServlet {
          
         RequestDispatcher rd = null;
         rd = request.getRequestDispatcher("publica/criar_conta.jsp");
+         
+        try {
+            rd.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void irParaPaginaInicial(HttpServletRequest request, HttpServletResponse response){
+        
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("publica/index.jsp");
+         
+        try {
+            rd.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void irParaUploadImage(HttpServletRequest request, HttpServletResponse response){
+        
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("publica/uploadImage.jsp");
          
         try {
             rd.forward(request, response);
