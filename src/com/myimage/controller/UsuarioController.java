@@ -28,7 +28,7 @@ public class UsuarioController extends HttpServlet {
         String action = request.getParameter("action");
  
         if (action == null) {
-            throw new ServletException("No action specified.");
+            throw new ServletException("Sem ação específica.");
         } else if (action.equals("criar_conta")) {
             criarConta(request, response);
         }

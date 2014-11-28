@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login</title>
+<title>UNEBImage :: Novo</title>
  
 <link rel="stylesheet" type="text/css"
     href="./resources/bootstrap/css/bootstrap.min.css" />
@@ -22,7 +22,7 @@
         <div class="row">
             <div class="container">
                 <div class="col-md-8">
-                    <h1>Crie uma conta no NewImage.com!</h1>
+                    <h1>Crie uma conta no UNEBImage.com!</h1>
                     <p>Crie uma conta e saia compartilhando imagens por ai</p>
                     <br />
                     <form class="form-horizontal" method="post"
