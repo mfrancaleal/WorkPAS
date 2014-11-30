@@ -11,7 +11,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <div class="row" style="padding-top: 10px;">
-                <a href="InicialController?action=novo" style="margin-right: 5px;" class="btn btn-sm btn-success active navbar-right offset" role="button">criar uma conta</a>
+                <a href="" class="btn btn-sm btn-success active navbar-right offset" role="button">nome user</a>
             </div>
         </div>
     </div>

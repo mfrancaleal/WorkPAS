@@ -29,9 +29,23 @@ public class InicialController extends HttpServlet {
         	irParaPaginaInicial(request, response);
         }else if(action.equals("upload")){
         	irParaUploadImage(request, response);
+        }else if(action.equals("login")){
+        	irParaFazerLogin(request, response);
         }
+        
     }
  
+    private void irParaFazerLogin(HttpServletRequest request, HttpServletResponse response){
+        
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("publica/fazer_login.jsp");
+         
+        try {
+            rd.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void irParaIniciarCriarConta(HttpServletRequest request, HttpServletResponse response){
          
         RequestDispatcher rd = null;

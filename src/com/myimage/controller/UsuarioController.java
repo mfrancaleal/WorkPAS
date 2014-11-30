@@ -1,11 +1,13 @@
 package com.myimage.controller;
  
 import java.io.IOException;
+import javax.servlet.RequestDispatcher; 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
  
 import com.myimage.dao.UsuarioDao;
 import com.myimage.dao.utils.DAOFactory;
@@ -23,19 +25,19 @@ public class UsuarioController extends HttpServlet {
     }
  
     private void processarRequisicao(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException {
+            HttpServletResponse response) throws ServletException, IOException{
  
         String action = request.getParameter("action");
  
         if (action == null) {
-            throw new ServletException("Sem ação.");
+            throw new ServletException("Sem ação");
         } else if (action.equals("criar_conta")) {
             criarConta(request, response);
         }
     }
  
     private void criarConta(HttpServletRequest request,
-            HttpServletResponse response) {
+            HttpServletResponse response) throws ServletException, IOException{
  
         String email = request.getParameter("email");
         String nome = request.getParameter("nome");
@@ -46,6 +48,12 @@ public class UsuarioController extends HttpServlet {
         usuario.setNome(nome);
         usuario.setSenha(senha);
         usuarioDao.save(usuario);
+        //ARMAZENO A SESSÃO PARA UTILIZAR EM CRIAR_CONTA
+        HttpSession session = request.getSession();
+        session.setAttribute("nome_usuario", nome);
+        //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
+        RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=novo");
+        rd.forward(request,response);
     }
  
     protected void doGet(HttpServletRequest request,
