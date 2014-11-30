@@ -12,6 +12,7 @@
         <div class="navbar-collapse collapse">
             <div class="row" style="padding-top: 10px;">
                 <a href="InicialController?action=upload" class="btn btn-sm btn-success active navbar-right" role="button">postar uma imagem</a>
+                <a href="InicialController?action=login"  style="margin-right: 5px;" class="btn btn-sm btn-success active navbar-right" role="button">fazer login</a>
             </div>
         </div>
     </div>

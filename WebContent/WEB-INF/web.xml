@@ -17,6 +17,7 @@
     </filter>
     <filter-mapping>
         <filter-name>conectionFilter</filter-name>
+        <!-- toda vez que houver uma chamada com o padrão de url “*.xhtml” a classe ConectionFilter deve ser acionado -->
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <resource-ref>

@@ -7,17 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
-import com.myimage.dao.ImagemDao;
-import com.myimage.dao.utils.DAOFactory;
+//import com.myimage.dao.ImagemDao;
+//import com.myimage.dao.utils.DAOFactory;
 import com.myimage.model.Imagem;
  
 @WebServlet("/ImagemController")
-public class imagemController extends HttpServlet {
+public class ImagemController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
     //private UsuarioDao usuarioDao;
      
-    public imagemController() {
+    public ImagemController() {
         super();
         
     }

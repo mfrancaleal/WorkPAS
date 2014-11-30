@@ -22,8 +22,10 @@ public class ConectionFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain) throws IOException, ServletException {
         try {
+        	//ESSE CÓDIGO SERÁ PROCESSADO NA IDA
             this.sessionFactory.getCurrentSession().beginTransaction();
             chain.doFilter(request, response);
+            //ESSE CÓDIGO SERÁ PROCESSADO NA VOLTA
             this.sessionFactory.getCurrentSession().getTransaction().commit();
             this.sessionFactory.getCurrentSession().close();
         } catch (Throwable ex) {

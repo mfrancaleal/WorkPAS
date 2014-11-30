@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label for="senha" class="col-sm-3 control-label">Senha</label>
                             <div class="col-sm-6">
-                                <input type="password" id="senha" class="form-control" name="password"
+                                <input type="password" id="senha" class="form-control" name="senha"
                                     placeholder="Digite aqui sua senha" />
                             </div>
                         </div>
@@ -62,7 +62,18 @@
                                     conta</button>
                             </div>
                         </div>
- 
+ 						<div class="form-group">
+                            <div class="col-sm-offset-3 col-sm-10">
+                            <% 
+                            String nome_usuario = (String) session.getAttribute("nome_usuario"); 
+                            if(nome_usuario != null){ 
+                            %>
+                            	Contato ${param.nome} adicionado com sucesso
+                            <%
+                            session.invalidate();
+                            } %>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
