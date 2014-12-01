@@ -62,18 +62,17 @@
                                     conta</button>
                             </div>
                         </div>
- 						<div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-10">
+ 						
+                            <div id="mensagem_cad_ok">
                             <% 
                             String nome_usuario = (String) session.getAttribute("nome_usuario"); 
                             if(nome_usuario != null){ 
                             %>
-                            	Contato ${param.nome} adicionado com sucesso
+                            	<h3>Contato ${param.nome} adicionado com sucesso</h3>
                             <%
                             session.invalidate();
                             } %>
                             </div>
-                        </div>
                     </form>
                 </div>
             </div>

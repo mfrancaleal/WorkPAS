@@ -1125,6 +1125,12 @@ mark,
   padding: .2em;
   background-color: #fcf8e3;
 }
+.mensagem_cad_ok{
+	font-family: serif;
+	font-size: 10px;
+	color: green;
+	font-weight: bold;
+}
 .text-left {
   text-align: left;
 }
