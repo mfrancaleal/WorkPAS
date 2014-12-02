@@ -5,7 +5,7 @@ import com.myimage.dao.UsuarioImpl;
  
 public class DAOFactory {
  
-    public static UsuarioDao createUsuario(){
+    public static UsuarioDao criarUsuario(){
         UsuarioImpl usuarioImpl = new UsuarioImpl();
         usuarioImpl.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
         return usuarioImpl;

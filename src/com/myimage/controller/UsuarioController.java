@@ -42,12 +42,12 @@ public class UsuarioController extends HttpServlet {
         String email = request.getParameter("email");
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
-        usuarioDao = DAOFactory.createUsuario();
+        usuarioDao = DAOFactory.criarUsuario();
         Usuario usuario = new Usuario();
         usuario.setEmail(email);
         usuario.setNome(nome);
         usuario.setSenha(senha);
-        usuarioDao.save(usuario);
+        usuarioDao.salvar(usuario);
         //ARMAZENO A SESSÃO PARA UTILIZAR EM CRIAR_CONTA
         HttpSession session = request.getSession();
         session.setAttribute("nome_usuario", nome);
