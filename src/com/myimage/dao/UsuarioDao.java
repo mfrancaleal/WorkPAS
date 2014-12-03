@@ -4,6 +4,6 @@ import com.myimage.model.Usuario;
 
 public interface UsuarioDao {
      
-    public void save(Usuario usuario);
+    public void salvar(Usuario usuario);
  
 }

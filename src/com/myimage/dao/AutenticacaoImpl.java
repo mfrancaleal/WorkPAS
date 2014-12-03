@@ -2,9 +2,9 @@ package com.myimage.dao;
 
 import org.hibernate.Session;
 
-import com.myimage.model.Usuario;
+import com.myimage.model.Autenticacao;
  
-public class UsuarioImpl implements UsuarioDao{
+public class AutenticacaoImpl implements AutenticacaoDao{
  
     private Session session;
  
@@ -13,8 +13,8 @@ public class UsuarioImpl implements UsuarioDao{
     }
      
     @Override
-    public void salvar(Usuario usuario) {
-        session.saveOrUpdate(usuario);        
+    public void buscar(Autenticacao autenticacao) {
+        session.saveOrUpdate(autenticacao);        
     }
  
 }

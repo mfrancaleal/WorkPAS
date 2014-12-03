@@ -9,17 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
  
-import com.myimage.dao.UsuarioDao;
+import com.myimage.dao.AutenticacaoDao;
 import com.myimage.dao.utils.DAOFactory;
-import com.myimage.model.Usuario;
+import com.myimage.model.Autenticacao;
  
-@WebServlet("/UsuarioController")
-public class UsuarioController extends HttpServlet {
+@WebServlet("/AutenticacaoController")
+public class AutenticacaoController extends HttpServlet {
     private static final long serialVersionUID = 1L;
  
-    private UsuarioDao usuarioDao;
+    private AutenticacaoDao autenticacaoDao;
      
-    public UsuarioController() {
+    public AutenticacaoController() {
         super();
         
     }
@@ -31,7 +31,7 @@ public class UsuarioController extends HttpServlet {
  
         if (action == null) {
             throw new ServletException("Sem ação");
-        } else if (action.equals("criar_conta")) {
+        } else if (action.equals("fazer_login")) {
             criarConta(request, response);
         }
     }
@@ -40,14 +40,12 @@ public class UsuarioController extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException{
  
         String email = request.getParameter("email");
-        String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
-        usuarioDao = DAOFactory.criarUsuario();
-        Usuario usuario = new Usuario();
-        usuario.setEmail(email);
-        usuario.setNome(nome);
-        usuario.setSenha(senha);
-        usuarioDao.salvar(usuario);
+        autenticacaoDao = DAOFactory.criarUsuario();
+        Autenticacao autenticacao = new Autenticacao();
+        autenticacao.setEmail(email);
+        autenticacao.setSenha(senha);
+        autenticacaoDao.buscar(autenticacao);
         //ARMAZENO A SESSÃO PARA UTILIZAR EM CRIAR_CONTA
         HttpSession session = request.getSession();
         session.setAttribute("nome_usuario", nome);
