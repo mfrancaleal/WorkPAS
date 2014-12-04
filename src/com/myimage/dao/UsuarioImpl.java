@@ -14,7 +14,7 @@ public class UsuarioImpl implements UsuarioDao{
      
     @Override
     public void salvar(Usuario usuario) {
-        session.saveOrUpdate(usuario);        
+        session.saveOrUpdate(usuario);
     }
  
 }

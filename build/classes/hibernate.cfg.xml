@@ -11,6 +11,7 @@
         <property name="show_sql">true</property>    
         <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
         
-        <mapping class="com.myimage.model.Usuario" />        
+        <mapping class="com.myimage.model.Usuario" />
+        <mapping class="com.myimage.model.Autenticacao" />        
     </session-factory>
 </hibernate-configuration>
