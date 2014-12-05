@@ -13,7 +13,7 @@ public class DAOFactory {
         return usuarioImpl;
     }
     
-    public static AutenticacaoDao ConsultaUsuario(){
+    public static AutenticacaoDao buscarUsuario(){
     	AutenticacaoImpl autenticacaoImpl = new AutenticacaoImpl();
     	autenticacaoImpl.setSession(HibernateUtil.getSessionFactory().getCurrentSession());
         return autenticacaoImpl;
