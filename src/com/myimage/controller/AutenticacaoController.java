@@ -14,7 +14,7 @@ import com.myimage.dao.utils.DAOFactory;
 import com.myimage.model.Autenticacao;
 import com.myimage.model.Usuario;
 
- 
+@WebServlet("/AutenticacaoController") 
 public class AutenticacaoController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
