@@ -43,6 +43,7 @@ public class LoginFilter implements Filter{
             }
             else
             {
+<<<<<<< HEAD
             	//this.sessionFactoryHttpSession session = request.getSession();
             	//session.setAttribute("mensagem_erro", "Campo(s) em branco");
                 //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
@@ -50,6 +51,13 @@ public class LoginFilter implements Filter{
                 //rd.forward(request,response);
             	System.out.println("Fez login");
             	
+=======
+            	this.sessionFactoryHttpSession session = request.getSession();
+            	session.setAttribute("mensagem_erro", "Campo(s) em branco");
+                //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
+                RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=login");
+                rd.forward(request,response);
+>>>>>>> origin/inHome
             }
         } catch (Throwable ex) {
            ex.printStackTrace();
