@@ -26,7 +26,7 @@
                     <p>Conecte-se e saia compartilhando imagens por ai</p>
                     <br />
                     <form class="form-horizontal" method="post"
-                        action="UsuarioController?action=login" role="form">
+                        action="login" role="form">
                         <div class="form-group">
                             <label for="email" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-5">
