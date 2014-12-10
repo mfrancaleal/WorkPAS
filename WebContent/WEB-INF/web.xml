@@ -21,10 +21,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-<<<<<<< HEAD
-	<resource-ref>
-=======
-    <filter>
+   <filter>
   		<filter-name>loginFilter</filter-name>
   		<filter-class>com.myimage.dao.utils.LoginFilter</filter-class>
    </filter>
@@ -35,23 +32,13 @@
     </filter-mapping>
 
     <resource-ref>
->>>>>>> origin/inHome
         <description>DataSource MyImage</description>
         <res-ref-name>jdbc/myimage</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>
     
-    <filter>
-  		<filter-name>loginFilter</filter-name>
-  		<filter-class>com.myimage.dao.utils.LoginFilter</filter-class>
-   </filter>
-       <filter-mapping>
-        <filter-name>loginFilter</filter-name>
-        <!-- toda vez que houver uma chamada com o login a classe LoginFilter deve ser acionado -->
-        <url-pattern>/login</url-pattern>
-    </filter-mapping>
-	<servlet>
+   <servlet>
 		<servlet-name>AutenticacaoController</servlet-name>
 		<servlet-class>com.myimage.controller.AutenticacaoController</servlet-class>
 	</servlet>

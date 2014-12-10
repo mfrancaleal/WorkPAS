@@ -47,14 +47,15 @@
                             </div>
                         </div>
  						   <div id="mensagem_cad_ok">
-                            <% 
-                            String mensagem_erro = (String) session.getAttribute("msgBranco"); 
+                          <% 
+                            String mensagem_erro = (String) session.getAttribute("mensagem_erro"); 
                             if(mensagem_erro != null){ 
                             %>
                             	<h3>${param.mensagem_erro}</h3>
                             <%
                             session.invalidate();
                             } %>
+                          
                             </div>
                     </form>
                 </div>

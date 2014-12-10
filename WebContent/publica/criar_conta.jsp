@@ -64,14 +64,15 @@
                         </div>
  						
                             <div id="mensagem_cad_ok">
-                            <% 
-                            String nome_usuario = (String) session.getAttribute("nome_usuario"); 
-                            if(nome_usuario != null){ 
+                          <!--    < % 
+                         //   String nome_usuario = (String) session.getAttribute("nome_usuario"); 
+                         //   if(nome_usuario != null){ 
                             %>
                             	<h3>Contato ${param.nome} adicionado com sucesso</h3>
-                            <%
-                            session.invalidate();
+                            < %
+                           // session.invalidate();
                             } %>
+                            -->
                             </div>
                     </form>
                 </div>

@@ -37,9 +37,7 @@ public class AutenticacaoController extends HttpServlet{
     	 		autentica.setSenha(senha);
 
              	autenticacaoDao = DAOFactory.buscarUsuario();
-             	  
-             	  
-                autenticacaoDao.buscarUsuario();
+                autenticacaoDao.buscarUsuario(autentica);
                   //ARMAZENO A SESSÃO PARA UTILIZAR EM CRIAR_CONTA
                   //HttpSession session = request.getSession();
                   //session.setAttribute("nome_usuario", nome);
@@ -48,7 +46,44 @@ public class AutenticacaoController extends HttpServlet{
                   
             	  //System.out.print(request.getParameter("email") +" "+request.getParameter("senha"));
                   //rd.forward(request,response);
-      
+     }
+     
+     protected void doGet(HttpServletRequest request, HttpServletResponse
+             response) throws ServletException, IOException {
+     }
+     
+     protected void processarRequisicao(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
+    	 String action = request.getParameter("action");
+    	 
+         if (action == null) {
+             throw new ServletException("Sem ação.");
+         } else if (action.equals("logout")) {
+        	 fazLogof(request, response);
+         }
+     }
+     
+     protected void fazLogof(HttpServletRequest request,
+             HttpServletResponse response) throws ServletException, IOException{
+    	 /*
+    	  * IMPLEMENTE AQUI
+    	  * */
+    	 
+    	 
+    	 
+    	 /*SE FIZER O LOGOUT EXECUTA ISTO
+    	  *
+    	  * RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=index");
+    	 rd.forward(request,response);
+    	  * */
+    	 
+    	 /*SE NÃO, EXECUTA AQUI
+    	  *
+    	  * RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=upload");
+    	 rd.forward(request,response);
+    	  * */
+    	 
+    	 
      }
 
 }
