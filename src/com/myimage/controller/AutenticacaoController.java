@@ -1,13 +1,9 @@
 package com.myimage.controller;
  
 import java.io.IOException;
-import javax.servlet.RequestDispatcher; 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*; 
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 import java.util.List;
 
 import com.myimage.dao.AutenticacaoDao;
@@ -40,7 +36,7 @@ public class AutenticacaoController extends HttpServlet{
     	 		//VALIDA OS DADOS DO USUÁRIO
              	autenticacaoDao = DAOFactory.buscarUsuario();
                 List<Usuario> RelUser = autenticacaoDao.buscarUsuario(autentica);
-                
+                //INICIANDO SESSÃO
                 HttpSession session = request.getSession();
                 //CONFIRME SE HOUVE RETORNO DE INFORMAÇÕES
                 if(RelUser.size()==0){
@@ -53,10 +49,11 @@ public class AutenticacaoController extends HttpServlet{
                 else if(RelUser.size()==1){
                 	
                 	Usuario[] arrayUser =  RelUser.toArray(new Usuario[RelUser.size()]);
-                	
+                
+                	//ArrayList<Usuario> 
                 	//ARMAZENO A SESSÃO PARA UTILIZAR EM FAZ_LOGIN
                 	session.setAttribute("mensagem_login", "Login feito com sucesso");
-                	session.setAttribute("nome_usuario", arrayUser[0]);
+                	session.setAttribute("nome_usuario", arrayUser);
                 	//APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
                 	RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=upload");
                 	rd.forward(request,response);

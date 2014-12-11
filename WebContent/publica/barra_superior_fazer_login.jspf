@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -12,8 +11,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <div class="row" style="padding-top: 10px;">
-                <a href="InicialController?action=logout" style="margin-left: 5px;" class="btn btn-sm btn-success active navbar-right offset" role="button">Logout</a>
-                <a href="" class="btn btn-sm btn-success active navbar-right offset" role="button">Bem vindo(a)</a>
+                <a href="InicialController?action=novo"  style="margin-right: 5px;" class="btn btn-sm btn-success active navbar-right" role="button">criar conta</a>
             </div>
         </div>
     </div>
