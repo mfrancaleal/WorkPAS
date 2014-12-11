@@ -33,12 +33,15 @@ public class AutenticacaoImpl implements AutenticacaoDao{
        consulta.setResultTransformer(Transformers.aliasToBean(Usuario.class));
        
        List<Usuario> RelUser = consulta.list();
-              
-       for(Usuario usuario : RelUser){
-    	   System.out.println("Nome "+usuario.getNome());
-    	   System.out.println("Email "+usuario.getEmail());
-       }
        
+       if(RelUser.size()==0)
+       {
+    	   System.out.println("Nada");
+       }
+       else
+       {
+    	   System.out.println("Oba");
+       }
        
     }
  
