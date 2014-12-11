@@ -22,23 +22,28 @@ public class AutenticacaoImpl implements AutenticacaoDao{
     }
      
     @Override
-    public void buscarUsuario(Autenticacao autentica) {
+    public List<Usuario> buscarUsuario(Autenticacao autentica) {
     	
 
-       Query consulta = session.createQuery("Select email as email, nome as nome FROM Usuario WHERE email=:email AND senha=:senha");
-       consulta.setParameter("senha",autentica.getSenha());
-       consulta.setParameter("email",autentica.getEmail());
+       Query consulta = session.createQuery("SELECT email as email, nome as nome FROM Usuario WHERE email=:email AND senha=:senha")
+    		   .setParameter("senha",autentica.getSenha())
+       			.setParameter("email",autentica.getEmail());
+       
        consulta.list();
        
        consulta.setResultTransformer(Transformers.aliasToBean(Usuario.class));
        
        List<Usuario> RelUser = consulta.list();
-              
-       for(Usuario usuario : RelUser){
-    	   System.out.println("Nome "+usuario.getNome());
-    	   System.out.println("Email "+usuario.getEmail());
-       }
        
+       
+       if(RelUser.size()==0)
+       {
+    	  return RelUser;
+       }
+       else
+       {
+    	   return RelUser;
+       }
        
     }
  
