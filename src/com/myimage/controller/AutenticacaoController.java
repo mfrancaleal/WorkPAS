@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
- 
+import java.util.List;
+
 import com.myimage.dao.AutenticacaoDao;
 import com.myimage.dao.utils.DAOFactory;
 import com.myimage.model.Autenticacao;
+import com.myimage.model.Usuario;
 
 @WebServlet("/AutenticacaoController") 
 public class AutenticacaoController extends HttpServlet{
@@ -35,17 +37,31 @@ public class AutenticacaoController extends HttpServlet{
     	 		
     	 		autentica.setEmail(email);
     	 		autentica.setSenha(senha);
-
+    	 		//VALIDA OS DADOS DO USUÁRIO
              	autenticacaoDao = DAOFactory.buscarUsuario();
-                autenticacaoDao.buscarUsuario(autentica);
-                  //ARMAZENO A SESSÃO PARA UTILIZAR EM CRIAR_CONTA
-                  //HttpSession session = request.getSession();
-                  //session.setAttribute("nome_usuario", nome);
-                  //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
-                  //RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=novo");
-                  
-            	  //System.out.print(request.getParameter("email") +" "+request.getParameter("senha"));
-                  //rd.forward(request,response);
+                List<Usuario> RelUser = autenticacaoDao.buscarUsuario(autentica);
+                
+                HttpSession session = request.getSession();
+                //CONFIRME SE HOUVE RETORNO DE INFORMAÇÕES
+                if(RelUser.size()==0){
+                	//ARMAZENO A SESSÃO PARA UTILIZAR EM FAZ_LOGIN
+                	session.setAttribute("mensagem_erro", "Dados inválidos");
+                	//APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
+                	RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=login");
+                	rd.forward(request,response);
+                }  
+                else if(RelUser.size()==1){
+                	
+                	Usuario[] arrayUser =  RelUser.toArray(new Usuario[RelUser.size()]);
+                	
+                	//ARMAZENO A SESSÃO PARA UTILIZAR EM FAZ_LOGIN
+                	session.setAttribute("mensagem_login", "Login feito com sucesso");
+                	session.setAttribute("nome_usuario", arrayUser[0]);
+                	//APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
+                	RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=upload");
+                	rd.forward(request,response);
+                }
+                
      }
      
      protected void doGet(HttpServletRequest request, HttpServletResponse

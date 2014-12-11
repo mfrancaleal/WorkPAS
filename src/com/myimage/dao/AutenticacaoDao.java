@@ -1,9 +1,11 @@
 package com.myimage.dao;
 
 import com.myimage.model.Autenticacao;
+import com.myimage.model.Usuario;
+import java.util.List;
 
 public interface AutenticacaoDao {
     
-    public void buscarUsuario(Autenticacao autentica);
+    public List<Usuario> buscarUsuario(Autenticacao autentica);
  
 }
