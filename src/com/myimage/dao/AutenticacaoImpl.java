@@ -2,6 +2,8 @@ package com.myimage.dao;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.transform.Transformers;
+
 import com.myimage.model.Autenticacao;
 import com.myimage.model.Usuario;
 
@@ -11,7 +13,7 @@ public class AutenticacaoImpl implements AutenticacaoDao{
  
     private Session session;
     
-    List<Usuario> list = null;
+    
     Usuario usuario;
     Autenticacao autentica;
     
@@ -23,12 +25,16 @@ public class AutenticacaoImpl implements AutenticacaoDao{
     public void buscarUsuario(Autenticacao autentica) {
     	
 
-       list = session.createQuery("FROM Usuario WHERE email=:email AND senha=:senha")
-    		   .setParameter("senha",autentica.getSenha())
-    		   .setParameter("email",autentica.getEmail())
-    		   .list();
+       Query consulta = session.createQuery("Select email as email, nome as nome FROM Usuario WHERE email=:email AND senha=:senha");
+       consulta.setParameter("senha",autentica.getSenha());
+       consulta.setParameter("email",autentica.getEmail());
+       consulta.list();
        
-       for(Usuario usuario : list){
+       consulta.setResultTransformer(Transformers.aliasToBean(Usuario.class));
+       
+       List<Usuario> RelUser = consulta.list();
+              
+       for(Usuario usuario : RelUser){
     	   System.out.println("Nome "+usuario.getNome());
     	   System.out.println("Email "+usuario.getEmail());
        }
