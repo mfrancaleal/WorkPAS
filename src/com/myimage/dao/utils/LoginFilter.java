@@ -1,19 +1,10 @@
 package com.myimage.dao.utils;
  
-import java.io.IOException;
+import java.io.*;
  
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 
 
 import com.myimage.dao.AutenticacaoDao;
@@ -25,6 +16,7 @@ import org.hibernate.SessionFactory;
 public class LoginFilter implements Filter{
  
 	private SessionFactory sessionFactory;
+	private HttpServletRequest sessao;
 	
     public void destroy() {
          
@@ -38,16 +30,17 @@ public class LoginFilter implements Filter{
         	String senha = request.getParameter("senha");
         	
         	//ESSE CÓDIGO SERÁ PROCESSADO NA IDA
-            if(email != null || senha != null){
+            if(!email.equals("") || !senha.equals("")){
             	chain.doFilter(request, response);
             }
             else
             {
-            	this.sessionFactoryHttpSession session = request.getSession();
-            	session.setAttribute("mensagem_erro", "Campo(s) em branco");
+            	//HttpSession session = this.sessao.getSession();
+            	//session.setAttribute("mensagem_erro", "Campo(s) em branco");
                 //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
                 RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=login");
                 rd.forward(request,response);
+
             }
         } catch (Throwable ex) {
            ex.printStackTrace();

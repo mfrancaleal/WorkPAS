@@ -26,7 +26,7 @@
                     <p>Conecte-se e saia compartilhando imagens por ai</p>
                     <br />
                     <form class="form-horizontal" method="post"
-                        action="UsuarioController?action=login" role="form">
+                        action="login" role="form">
                         <div class="form-group">
                             <label for="email" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-5">
@@ -47,14 +47,15 @@
                             </div>
                         </div>
  						   <div id="mensagem_cad_ok">
-                            <% 
-                            String mensagem_erro = (String) session.getAttribute("msgBranco"); 
+                          <% 
+                            String mensagem_erro = (String) session.getAttribute("mensagem_erro"); 
                             if(mensagem_erro != null){ 
                             %>
                             	<h3>${param.mensagem_erro}</h3>
                             <%
                             session.invalidate();
                             } %>
+                          
                             </div>
                     </form>
                 </div>
