@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,7 +22,8 @@
         <div class="row">
             <div class="container">
                 <div class="col-md-8">
-                    <h1>Suba suas fotos!</h1>
+                	<% Object nome_usuario = session.getAttribute("nome_usuario");%>
+                    <h1>Suba suas fotos <% out.println(nome_usuario);%></h1>
                     <p>Suba suas fotos e compartilhe por ai</p>
                     <br />
                     <form class="form-horizontal" method="post"
