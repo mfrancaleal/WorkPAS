@@ -4,13 +4,10 @@ import java.io.*;
  
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.annotation.WebServlet;
 
 
-import com.myimage.dao.AutenticacaoDao;
-import com.myimage.dao.utils.DAOFactory;
-import com.myimage.model.Autenticacao;
-import com.myimage.model.Usuario;
+
+
 import org.hibernate.SessionFactory;
 
 public class LoginFilter implements Filter{
@@ -35,8 +32,8 @@ public class LoginFilter implements Filter{
             }
             else
             {
-            	//HttpSession session = this.sessao.getSession();
-            	//session.setAttribute("mensagem_erro", "Campo(s) em branco");
+            	HttpSession session = this.sessao.getSession();
+            	session.setAttribute("mensagem_erro", "Campo(s) em branco");
                 //APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
                 RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=login");
                 rd.forward(request,response);

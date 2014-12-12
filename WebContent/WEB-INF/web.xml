@@ -30,6 +30,15 @@
         <!-- toda vez que houver uma chamada com o padrão de url “*.xhtml” a classe ConectionFilter deve ser acionado -->
         <url-pattern>/login</url-pattern>
     </filter-mapping>
+    
+    <filter>
+  		<filter-name>logoutFilter</filter-name>
+  		<filter-class>com.myimage.dao.utils.LogoutFilter</filter-class>
+   </filter>
+       <filter-mapping>
+        <filter-name>logoutFilter</filter-name>
+        <url-pattern>/fazer_logout.jsp</url-pattern>
+    </filter-mapping>
 
     <resource-ref>
         <description>DataSource MyImage</description>

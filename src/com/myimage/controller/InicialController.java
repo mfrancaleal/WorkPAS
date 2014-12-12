@@ -31,6 +31,8 @@ public class InicialController extends HttpServlet {
         	irParaUploadImage(request, response);
         }else if(action.equals("login")){
         	irParaFazerLogin(request, response);
+        }else if(action.equals("logout")){
+        	irParaFazerLogout(request, response);
         }
         
     }
@@ -46,6 +48,19 @@ public class InicialController extends HttpServlet {
             e.printStackTrace();
         }
     }
+    
+    private void irParaFazerLogout(HttpServletRequest request, HttpServletResponse response){
+        
+        RequestDispatcher rd = null;
+        rd = request.getRequestDispatcher("publica/fazer_logout.jsp");
+         
+        try {
+            rd.forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void irParaIniciarCriarConta(HttpServletRequest request, HttpServletResponse response){
          
         RequestDispatcher rd = null;

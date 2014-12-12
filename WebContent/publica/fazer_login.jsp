@@ -16,7 +16,7 @@
  
 </head>
 <body>
-    <jsp:include page="barra_superior_criar_conta.jspf" />
+    <jsp:include page="barra_superior_fazer_login.jspf" />
  
     <div class="container" style="padding-top: 80px;">
         <div class="row">
@@ -51,7 +51,7 @@
                             String mensagem_erro = (String) session.getAttribute("mensagem_erro"); 
                             if(mensagem_erro != null){ 
                             %>
-                            	<h3>${param.mensagem_erro}</h3>
+                            	<h3><%out.println(mensagem_erro); %>${param.mensagem_erro}</h3>
                             <%
                             session.invalidate();
                             } %>

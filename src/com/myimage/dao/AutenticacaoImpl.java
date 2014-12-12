@@ -29,7 +29,7 @@ public class AutenticacaoImpl implements AutenticacaoDao{
     		   .setParameter("senha",autentica.getSenha())
        			.setParameter("email",autentica.getEmail());
        
-       consulta.list();
+      consulta.list();
        
        consulta.setResultTransformer(Transformers.aliasToBean(Usuario.class));
        

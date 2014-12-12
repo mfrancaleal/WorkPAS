@@ -2,7 +2,7 @@ package com.myimage.controller;
  
 import java.io.*;
 import javax.servlet.*; 
-import javax.servlet.annotation.WebServlet;
+import javax.servlet.annotation.*;
 import javax.servlet.http.*;
  
 import com.myimage.dao.UsuarioDao;
