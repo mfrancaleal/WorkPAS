@@ -22,9 +22,21 @@
         <div class="row">
             <div class="container">
                 <div class="col-md-8">
+<<<<<<< HEAD
+                	<% 
+                	Object nome_usuario = session.getAttribute("nome_usuario");
+                	if(nome_usuario == null){
+                		 String redirectURL = "InicialController?action=login";
+             		     response.sendRedirect(redirectURL);
+                	} 
+                	%>
+                    <h1>Suba suas fotos <% out.println(nome_usuario);%></h1>
+                    <p>Compartilhe por ai seus momentos</p>
+=======
                 	<% Object nome_usuario = session.getAttribute("nome_usuario");%>
                     <h1>Suba suas fotos <% out.println(nome_usuario);%></h1>
                     <p>Suba suas fotos e compartilhe por ai</p>
+>>>>>>> origin/inHome
                     <br />
                     <form class="form-horizontal" method="post"
                         action="ImagemController?action=upload" role="form">
