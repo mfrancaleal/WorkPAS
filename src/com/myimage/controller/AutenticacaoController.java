@@ -48,6 +48,7 @@ public class AutenticacaoController extends HttpServlet{
                 	rd.forward(request,response);
                 }  
                 else if(RelUser.size()==1){
+<<<<<<< HEAD
                 	String nome = null;
                 	for(Usuario usuario : RelUser){
                 		nome = usuario.getNome().substring(0,1).toUpperCase().concat(usuario.getNome().substring(1));
@@ -57,6 +58,15 @@ public class AutenticacaoController extends HttpServlet{
                 	//ARMAZENO A SESSÃO PARA UTILIZAR EM FAZ_LOGIN
                 	session.setAttribute("mensagem_login", "Login feito com sucesso");
                 	session.setAttribute("nome_usuario", nome);
+=======
+                	
+                	Usuario[] arrayUser =  RelUser.toArray(new Usuario[RelUser.size()]);
+                
+                	//ArrayList<Usuario> 
+                	//ARMAZENO A SESSÃO PARA UTILIZAR EM FAZ_LOGIN
+                	session.setAttribute("mensagem_login", "Login feito com sucesso");
+                	session.setAttribute("nome_usuario", arrayUser);
+>>>>>>> origin/inHome
                 	//APÓS A EXECUÇÃO DIRECIONO O USUÁRIO PARA A PÁGINA CRIAR_CONTA
                 	RequestDispatcher rd = request.getRequestDispatcher("/InicialController?action=upload");
                 	rd.forward(request,response);
