@@ -1,45 +1,71 @@
 package com.myimage.model;
- 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
- 
-@Entity
-@SequenceGenerator(name = "seq", sequenceName = "seq_usuario",
-                   allocationSize = 1, initialValue = 1)
- 
-public class Imagem {
-     
-	@Id
-    @GeneratedValue(generator="seq")
-    private Integer id;
+
+import antlr.collections.List;
+
+public class Imagem extends Multimidia {
+	
+	private String extensao;
+	private String titulo;
+	private String url;
+    private int tamanho;
     private String nome;
-    private String email;
-    private String senha;
-     
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    
+	public Imagem(){
+		super();
+	}
+	
+	@Override
+	protected void salvar(){
+		
+	}
+	
+	private List carregaImagem(){
+		List retornImagem = (List) this.carregaMidia();
+		
+		return retornImagem;
+	}
+	
+	public String getExtensao() {
+		return extensao;
+	}
+
+	public void setExtensao(String extensao) {
+		this.extensao = extensao;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public int getTamanho() {
+		return tamanho;
+	}
+
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	
+	
+	
 }
