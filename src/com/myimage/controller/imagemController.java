@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
+import com.myimage.model.Imagem;
 //import com.myimage.dao.ImagemDao;
 //import com.myimage.dao.utils.DAOFactory;
-import com.myimage.model.Imagem;
+import com.myimage.model.Multimidia;
  
 @WebServlet("/ImagemController")
 public class ImagemController extends HttpServlet {
@@ -40,11 +41,12 @@ public class ImagemController extends HttpServlet {
         String email = request.getParameter("email");
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
+        String tamanho = request.getParameter("tamanho");
       //  usuarioDao = DAOFactory.createUsuario();
-        Imagem imagem = new Imagem();
-        imagem.setEmail(email);
+        Multimidia imagem = new Imagem();
+        imagem.setUrl(email);
         imagem.setNome(nome);
-        imagem.setSenha(senha);
+        imagem.setTamanho(1);
      //   usuarioDao.save(usuario);
     }
  

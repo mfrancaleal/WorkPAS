@@ -17,7 +17,32 @@ pageEncoding="UTF-8"%>
    <jsp:include page="barra_busca .jspf"/>
  
    <div class="container">
- 
+ 	<table align="center" cellspacing="90" cellpadding="50">
+ 	<tr>
+ 		<td><img src="./resources/bootstrap/img/img1.jpg"/ width="350" height="250"></td>
+ 		<td><img src="./resources/bootstrap/img/img2.jpg"/ width="350" height="250"></td>
+ 	</tr>
+ 	<tr height="5">
+ 		<td align="center">SEGUNDA GUERRA</td>
+ 		<td align="center">PARAÍSO NO MEDITERRÂNEO</td>
+ 	</tr>
+ 	<tr>
+ 		<td><img src="./resources/bootstrap/img/img3.jpg"/ width="350" height="250"></td>
+ 		<td><img src="./resources/bootstrap/img/img4.jpg"/ width="350" height="250"></td>
+ 	</tr>
+ 	<tr height="5">
+ 		<td align="center">CAÇA DE GUERRA</td>
+ 		<td align="center">AMERICAN AIR LINES</td>
+ 	</tr>
+ 	<tr>
+ 		<td><img src="./resources/bootstrap/img/img5.jpg"/ width="350" height="250"></td>
+ 		<td><img src="./resources/bootstrap/img/img6.jpg"/ width="350" height="250"></td>
+ 	</tr>
+ 	<tr height="5">
+ 		<td align="center">CAÇA DE GUERRA</td>
+ 		<td align="center">PINTURA DE GUERRA</td>
+ 	</tr>
+ 	</table>
    </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
