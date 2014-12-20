@@ -5,7 +5,6 @@ pageEncoding="UTF-8"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>UNEBImage.com</title>
- 
  <link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap.min.css" />
  <link rel="stylesheet" type="text/css" href="./resources/bootstrap/css/bootstrap-theme.min.css" />
  <script src="./resources/bootstrap/js/bootstrap.min.js"></script>
@@ -17,6 +16,8 @@ pageEncoding="UTF-8"%>
    <jsp:include page="barra_busca .jspf"/>
  
    <div class="container">
+   
+   
  	<table align="center" cellspacing="90" cellpadding="50">
  	<tr>
  		<td><img src="./resources/bootstrap/img/img1.jpg"/ width="350" height="250"></td>
