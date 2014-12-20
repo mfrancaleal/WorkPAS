@@ -1,0 +1,25 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Equipe FILTER~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Componentes:
+Danilo Pimentel
+Jean Vidal
+Michel Leal
+Móises Jr.
+
+Filter:
+Filtros são classes que permitem que executemos código antes da requisição e também depois que a resposta foi gerada.
+
+Projeto disponível em:
+
+https://github.com/mfrancaleal/WorkPAS.git
+
+Apresesentação disponível em:
+
+http://prezi.com/s1jdqrj-wbkz/?utm_campaign=share&utm_medium=copy&rc=ex0share
+
+O exercício passado a vocês no pendrive visa a fixação e maior entendimento do conteúdo passado na apresentação.
+
+Todas as intruções de como proceder para realizar o mesmo se encontram no PDF nomeado como Atividade.
+
+Em caso de qualquer dúvida na resolução do mesmo favor sinalizar a qualquer membro da equipe que esteja presente.
+
+Bons Estudos!
