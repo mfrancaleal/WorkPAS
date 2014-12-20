@@ -23,7 +23,7 @@ public class AutenticacaoController extends HttpServlet{
         super();
         
     }
-     protected void doPost(HttpServletRequest request, HttpServletResponse
+     public void doPost(HttpServletRequest request, HttpServletResponse
          response) throws ServletException, IOException {
     	 		
     	 		Autenticacao autentica = new Autenticacao();
